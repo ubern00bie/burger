@@ -1,7 +1,5 @@
 const orm = require("../config/orm");
-//const burger = require("./burger.js");
 
-//create code that will call the ORM functions using burger specific input for the ORM
 var burger = {
     selectAll: function (cb) {
         orm.selectAll("burgers", function (res) {
