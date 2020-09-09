@@ -1,0 +1,11 @@
+.main {
+    background-image: url(/assets/burger.jpg);
+    background-size: cover;
+    background-color: black; 
+}
+.unDevoured{
+    background-color: aqua;
+}
+#newBurger{
+    color:yellow;
+}

@@ -1,12 +1,69 @@
-
 <h1>Welcome to Eat-Da-Burger!</h1>
-<div>
-  <ul>
-    {{#each burgers}}
-      <li>
-          <p>Burger Name: {{this.burger_name}}</p>
-          <p>Devoured: {{this.devoured}}</p>
-      </li>
-    {{/each}}
-  </ul>
+<container class = "main">
+<div class = 'row'>
+  <div class = 'col'>
+    <h2>Burgers</h2>
+    <ul>
+      {{#each burgers}}
+      {{#unless this.devoured}}
+      <div class = "unDevoured">
+        <p>Burger Name: {{this.burger_name}}  <button class = 'devourBtn' value="{{this.id}}">DEVOUR THIS BURGER!!</button></p>
+      </div>
+      {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+  
+  <div class = 'col'>
+    <h2>Devoured Burgers</h2>
+    <ul>
+      {{#each burgers}}
+      {{#if this.devoured}}
+        <p>Burger Name: {{this.burger_name}} 
+      {{/if}}
+      {{/each}}
+    </ul>
+  </div>
 </div>
+
+<div class = 'row'>
+  <div class = 'col submitArea'>
+  <form>
+    <label for="burger">Add a burger to the list!</label><br>
+    <input type="text" id="newBurger" name="newBurger" value="">
+    <input type="button" id="submitBtn" name="submitBtn" value="Submit">
+  </form>
+  </div>
+</div>
+</container>
+<script>
+  var devourBtn = document.querySelector(".devourBtn");
+   if(devourBtn != null){
+  devourBtn.addEventListener('click', function() {
+   
+    var id = this.value;
+    $.ajax({url: "/api/burgers/" + id, method: "PUT"})
+    .then(function (data) {
+      location.reload()
+    })
+  });
+  }
+
+  var submitBurger = document.querySelector("#submitBtn");
+  var newBurger = document.getElementById("newBurger")
+  submitBurger.addEventListener('click', function() { 
+    if(newBurger.value == null || newBurger.value == ""){
+      alert("Enter a burger buddy!");
+    }else{   
+      console.log(newBurger.value);
+      $.post("/burgers",
+        {
+          burger_name : newBurger.value
+        }
+      ).then(function(){
+        location.reload();
+      })
+    }
+  })
+</script>
+
