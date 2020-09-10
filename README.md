@@ -14,8 +14,7 @@
   - [Feedback](#Feedback)
   - [License](#License)
 
-
-[![STAFF MANAGER DEMO](./Assets/demo.PNG)](https://drive.google.com/file/d/1tmjQw0tBA1dRCBBC6ZKZ-o5EoF8eNIp3/view "Demo")
+[![EAT-DA-BURGER DEMO](./Public/Assets/demo.PNG)](https://drive.google.com/file/d/1b7b9URLgcx2I1wH2PJqKf8aXXDprGimq/view "Demo")
 
   ## Installation-Instructions
   download and run 'npm install'
