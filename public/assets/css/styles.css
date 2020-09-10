@@ -1,0 +1,35 @@
+body {
+    background-image: url(/assets/burger.jpg);
+    background-size: cover;
+    background-color: black; 
+    color:white;
+}
+h1{
+    text-align: center;
+    color:red;
+    padding-bottom: 50px;
+}
+.unDevoured{
+    color: rgb(207, 144, 73);
+    margin-left:25px;
+}
+.devoured{
+    color:rgb(207, 144, 73);
+}
+#newBurger{
+    color:yellow;
+}
+h2{
+    color:rgb(207, 144, 73);
+    text-decoration: underline;
+}
+label{
+   color: rgb(207, 144, 73);
+    font-size:25px;
+}
+.submitArea{
+    margin-left: 50px;
+    background: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding:25px
+}

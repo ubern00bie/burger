@@ -1,20 +1,18 @@
 <h1>Welcome to Eat-Da-Burger!</h1>
 <container class = "main">
 <div class = 'row'>
-  <div class = 'col'>
+  <div class = 'col unDevoured'>
     <h2>Burgers</h2>
-    <ul>
-      {{#each burgers}}
-      {{#unless this.devoured}}
-      <div class = "unDevoured">
-        <p>{{this.burger_name}}  <button class = 'devourBtn' value="{{this.id}}">DEVOUR THIS BURGER!!</button></p>
-      </div>
-      {{/unless}}
-      {{/each}}
-    </ul>
+      <ul>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+          <p>{{this.burger_name}}  <button class = 'devourBtn btn btn-primary' value="{{this.id}}">DEVOUR THIS BURGER!!</button></p>
+        {{/unless}}
+        {{/each}}
+      </ul>
   </div>
   
-  <div class = 'col'>
+  <div class = 'col devoured'>
     <h2>Devoured Burgers</h2>
     <ul>
       {{#each burgers}}
@@ -26,20 +24,20 @@
   </div>
 </div>
 
-<div class = 'row'>
-  <div class = 'col submitArea'>
-  <form>
-    <label for="burger">Add a burger to the list!</label><br>
-    <input type="text" id="newBurger" name="newBurger" value="">
-    <input type="button" id="submitBtn" name="submitBtn" value="Submit">
-  </form>
+  <div class = 'row'>
+    <div class = 'col-3 submitArea'>
+      <form>
+        <label for="burger">Add a burger to the list!</label><br>
+        <input type="text" id="newBurger" name="newBurger" value="">
+        <input type="button" class = "btn btn-primary" id="submitBtn" name="submitBtn" value="Submit">
+      </form>
+    </div>
   </div>
-</div>
 </container>
 <script>
   var devourBtn = document.querySelector(".devourBtn");
    if(devourBtn != null){
-  devourBtn.addEventListener('click', function() {
+    devourBtn.addEventListener('click', function() {
    
     var id = this.value;
     $.ajax({url: "/api/burgers/" + id, method: "PUT"})
