@@ -14,7 +14,7 @@
   - [Feedback](#Feedback)
   - [License](#License)
 
-[![EAT-DA-BURGER DEMO](./Public/Assets/demo.PNG)](https://drive.google.com/file/d/1b7b9URLgcx2I1wH2PJqKf8aXXDprGimq/view "Demo")
+[![EAT-DA-BURGER DEMO](./public/assets/demo.PNG)](https://drive.google.com/file/d/1b7b9URLgcx2I1wH2PJqKf8aXXDprGimq/view "Demo")
 
   ## Installation-Instructions
   download and run 'npm install'
