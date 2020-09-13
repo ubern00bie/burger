@@ -38,7 +38,7 @@
   var devourBtn = document.querySelector(".devourBtn");
    if(devourBtn != null){
     devourBtn.addEventListener('click', function() {
-   event.preventDefault();
+    event.preventDefault();
     var id = this.value;
     $.ajax({url: "/api/burgers/" + id, method: "PUT"})
     .then(function (data) {
